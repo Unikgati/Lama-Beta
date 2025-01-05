@@ -105,12 +105,28 @@ header .search button {
     }
 }
 
+.hero h1 span {
+    background: linear-gradient(135deg, #9626ff, #ff26cc);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+
 .hero .cta-button:hover {
     background-color: #005bb5;
 }
 
 .laptop-list {
     padding: 20px;
+}
+
+#filter-brand {
+    min-height: 2.5rem;
+}
+
+#filter-harga {
+    min-height: 2.5rem;
 }
 
 .laptop-list .filter {
