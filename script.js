@@ -299,74 +299,106 @@ document.addEventListener('DOMContentLoaded', function () {
 
 laptops.push({
     nama: "Laptop Acer Aspire 5",
-    gambar: "laptop2.png",
+    gambar: "images/laptop2.png",
     spesifikasi: "Intel Core i5, 8GB RAM, 512GB SSD",
     harga: "Rp 6.000.000",
     status: "Second", // Status baru
     deskripsi: "Laptop Acer Aspire 5 adalah laptop yang cocok untuk produktivitas sehari-hari.",
-    gambarTambahan: ["laptop2.png", "laptop3.png", "laptop4.png"]
+    gambarTambahan: ["images/laptop2.png", "images/laptop3.png", "images/laptop4.png"]
 });
 
 laptops.push({
     nama: "Laptop Asus VivoBook 14",
-    gambar: "laptop2.png",
+    gambar: "images/laptop2.png",
     spesifikasi: "AMD Ryzen 5, 8GB RAM, 512GB SSD",
     harga: "Rp 7.000.000",
     status: "Second",
     deskripsi: "Laptop Asus VivoBook 14 adalah laptop ringan dengan performa tinggi.",
-    gambarTambahan: ["laptop2.png", "laptop3.png", "laptop4.png"]
+    gambarTambahan: ["images/laptop2.png", "images/laptop3.png", "images/laptop4.png"]
 });
 
 laptops.push({
     nama: "Laptop Asus VivoBook 14",
-    gambar: "laptop2.png",
+    gambar: "images/laptop2.png",
     spesifikasi: "AMD Ryzen 5, 8GB RAM, 512GB SSD",
     harga: "Rp 7.000.000",
     status: "Second", // Status baru
     deskripsi: "Laptop Asus VivoBook 14 adalah laptop ringan dengan performa tinggi.",
-    gambarTambahan: ["laptop2.png", "laptop3.png", "laptop4.png"]
+    gambarTambahan: ["images/laptop2.png", "images/laptop3.png", "images/laptop4.png"]
 });
 
 laptops.push({
     nama: "Laptop Asus VivoBook 14",
-    gambar: "laptop2.png",
+    gambar: "images/laptop2.png",
     spesifikasi: "AMD Ryzen 5, 8GB RAM, 512GB SSD",
     harga: "Rp 7.000.000",
     status: "Second", // Status baru
     deskripsi: "Laptop Asus VivoBook 14 adalah laptop ringan dengan performa tinggi.",
-    gambarTambahan: ["laptop2.png", "laptop3.png", "laptop4.png"]
+    gambarTambahan: ["images/laptop2.png", "images/laptop3.png", "images/laptop4.png"]
 });
 
 laptops.push({
     nama: "Laptop Asus VivoBook 14",
-    gambar: "laptop2.png",
+    gambar: "images/laptop2.png",
     spesifikasi: "AMD Ryzen 5, 8GB RAM, 512GB SSD",
     harga: "Rp 7.000.000",
     status: "Second", // Status baru
     deskripsi: "Laptop Asus VivoBook 14 adalah laptop ringan dengan performa tinggi.",
-    gambarTambahan: ["laptop2.png", "laptop3.png", "laptop4.png"]
+    gambarTambahan: ["images/laptop2.png", "images/laptop3.png", "images/laptop4.png"]
 });
 
 laptops.push({
     nama: "Laptop Asus VivoBook 14",
-    gambar: "laptop2.png",
+    gambar: "images/laptop2.png",
     spesifikasi: "AMD Ryzen 5, 8GB RAM, 512GB SSD",
     harga: "Rp 7.000.000",
     status: "Second", // Status baru
     deskripsi: "Laptop Asus VivoBook 14 adalah laptop ringan dengan performa tinggi.",
-    gambarTambahan: ["laptop2.png", "laptop3.png", "laptop4.png"]
+    gambarTambahan: ["images/laptop2.png", "images/laptop3.png", "images/laptop4.png"]
 });
 
 laptops.push({
     nama: "Laptop Asus VivoBook 14",
-    gambar: "laptop2.png",
+    gambar: "images/laptop2.png",
     spesifikasi: "AMD Ryzen 5, 8GB RAM, 512GB SSD",
     harga: "Rp 7.000.000",
     status: "Second", // Status baru
     deskripsi: "Laptop Asus VivoBook 14 adalah laptop ringan dengan performa tinggi.",
-    gambarTambahan: ["laptop2.png", "laptop3.png", "laptop4.png"]
+    gambarTambahan: ["images/laptop2.png", "images/laptop3.png", "images/laptop4.png"]
 });
 
 
+let startX = 0;
+let endX = 0;
+
+// Fungsi untuk menangani swipe
+function handleSwipe() {
+    const distance = endX - startX;
+
+    if (distance > 50) {
+        // Geser ke kanan (gambar sebelumnya)
+        showPrevImage();
+    } else if (distance < -50) {
+        // Geser ke kiri (gambar berikutnya)
+        showNextImage();
+    }
+}
+
+// Tambahkan event listener untuk swipe pada popup image
+document.addEventListener('DOMContentLoaded', function () {
+    const popupImage = document.querySelector('.popup-image');
+
+    popupImage.addEventListener('touchstart', function (event) {
+        startX = event.touches[0].clientX;
+    });
+
+    popupImage.addEventListener('touchmove', function (event) {
+        endX = event.touches[0].clientX;
+    });
+
+    popupImage.addEventListener('touchend', function () {
+        handleSwipe();
+    });
+});
 
 
